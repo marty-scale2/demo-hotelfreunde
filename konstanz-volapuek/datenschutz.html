@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Datenschutzerklärung von Hotelfreunde.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#FDFBF8">
+<title>Datenschutzerklärung · Hotelfreunde</title>
+</head>
+<body>
+<style>
+/* ============================================================
+   Schriften liegen lokal im Ordner fonts/. Kein Aufruf an
+   Google, damit beim Seitenaufruf keine IP-Adresse dorthin
+   uebertragen wird (LG Muenchen I, 20.01.2022, 3 O 17493/20).
+   Beides sind Variable Fonts, eine Datei deckt alle Gewichte ab.
+   ============================================================ */
+
+@font-face{
+  font-family:'Archivo';
+  font-style:normal;
+  font-weight:400 700;
+  font-stretch:100%;font-display:swap;
+  src:url('fonts/archivo-latin-ext.woff2') format('woff2');
+  unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face{
+  font-family:'Archivo';
+  font-style:normal;
+  font-weight:400 700;
+  font-stretch:100%;font-display:swap;
+  src:url('fonts/archivo-latin.woff2') format('woff2');
+  unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face{
+  font-family:'Fraunces';
+  font-style:normal;
+  font-weight:400 800;
+  font-display:swap;
+  src:url('fonts/fraunces-latin-ext.woff2') format('woff2');
+  unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+@font-face{
+  font-family:'Fraunces';
+  font-style:normal;
+  font-weight:400 800;
+  font-display:swap;
+  src:url('fonts/fraunces-latin.woff2') format('woff2');
+  unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root{
+  --paper:#FDFBF8; --paper-2:#F5EFE6; --surface:#FFFFFF;
+  --ink:#14181B; --ink-2:#4E585E; --muted:#8A9298;
+  --linie:#DDD4C7; --kante:#14181B;
+  --flame:#EE3D0E; --flame-deep:#BE2E06;
+  --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px; --s7:48px; --s8:64px;
+  --r:3px; --shell:1120px;
+}
+*{box-sizing:border-box}
+html{background:var(--paper)}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Archivo","Helvetica Neue",Arial,sans-serif;
+  font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+.shell{max-width:var(--shell);margin:0 auto;padding:0 24px}
+
+.topbar{position:sticky;top:0;z-index:40;background:rgba(253,251,248,.9);backdrop-filter:saturate(150%) blur(12px);border-bottom:1px solid var(--linie)}
+.topbar .in{max-width:var(--shell);margin:0 auto;padding:13px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+/* Wortmarke: Bildmarke plus HOTELFREUNDE, zweifarbig gesetzt. */
+.brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none}
+.brand .logo-mark{width:34px;height:34px;flex:none;color:var(--kante)}
+.brand .wort{
+  font-family:"Archivo",Arial,sans-serif;font-weight:700;
+  font-size:1.34rem;line-height:1;letter-spacing:.055em;
+  text-transform:uppercase;white-space:nowrap;
+}
+.brand .wort .w1{color:var(--kante)}
+.brand .wort .w2{color:var(--flame)}
+@media (max-width:620px){
+  .brand{gap:8px}
+  .brand .logo-mark{width:27px;height:27px}
+  .brand .wort{font-size:1.02rem;letter-spacing:.045em}
+}
+@media (max-width:390px){
+  .brand .logo-mark{width:24px;height:24px}
+  .brand .wort{font-size:.9rem}
+}
+.zurueck{display:inline-flex;align-items:center;gap:8px;font-size:.9rem;font-weight:600;text-decoration:none;border:1px solid var(--kante);border-radius:var(--r);padding:9px 17px;transition:background .18s ease,color .18s ease}
+.zurueck:hover{background:var(--kante);color:var(--paper)}
+@media (max-width:620px){  .zurueck{padding:8px 12px;font-size:.82rem} }
+
+main{padding:var(--s8) 0}
+.kopf{border-top:2px solid var(--kante);padding-top:var(--s5);margin-bottom:var(--s7)}
+.eyebrow{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);margin-bottom:var(--s3)}
+h1{
+  font-family:"Fraunces",Georgia,serif;font-weight:700;
+  font-size:clamp(2rem,4vw,2.9rem);line-height:1.04;letter-spacing:-.032em;margin:0;
+  font-variation-settings:"SOFT" 55,"WONK" 0;
+}
+.recht{max-width:70ch;display:flex;flex-direction:column;gap:var(--s6)}
+.block{display:flex;flex-direction:column;gap:var(--s3);padding-top:var(--s5);border-top:1px solid var(--linie)}
+.block:first-child{border-top:0;padding-top:0}
+h2{font-family:"Archivo",Arial,sans-serif;font-size:1.12rem;font-weight:700;letter-spacing:-.01em;margin:0}
+h3{font-family:"Archivo",Arial,sans-serif;font-size:.98rem;font-weight:700;margin:var(--s2) 0 0}
+p{margin:0;color:var(--ink-2)}
+address{font-style:normal;color:var(--ink-2);line-height:1.75}
+.recht a{color:var(--flame-deep);text-decoration:none;border-bottom:1px solid currentColor;word-break:break-word}
+.stand{margin-top:var(--s3);font-size:.88rem;color:var(--muted)}
+.recht code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.9em;background:var(--paper-2);padding:1px 5px;border-radius:3px}
+.merke{border-left:3px solid var(--flame);padding:var(--s3) 0 var(--s3) var(--s4);color:var(--ink);font-weight:500}
+.recht ul{margin:0;padding-left:1.15em;color:var(--ink-2);display:flex;flex-direction:column;gap:var(--s2)}
+.recht li::marker{color:var(--flame)}
+.recht li b{color:var(--ink)}
+
+footer{margin-top:var(--s8);border-top:2px solid var(--kante);background:var(--paper)}
+footer .in{max-width:var(--shell);margin:0 auto;padding:var(--s6) 24px;display:flex;flex-wrap:wrap;gap:var(--s4);justify-content:space-between;align-items:center}
+footer p{font-size:.88rem;color:var(--muted)}
+footer nav{display:flex;flex-wrap:wrap;gap:10px 20px}
+footer nav a{font-size:.88rem;color:var(--ink-2);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px}
+footer nav a:hover{border-bottom-color:var(--flame)}
+</style>
+
+<header class="topbar">
+  <div class="in">
+    <a class="brand" href="index.html"><svg class="logo-mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M24 18V5" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" fill="none"/><path d="M25.8 5.6h11.4l-3.7 3.5 3.7 3.5H25.8z" fill="var(--flame)"/><rect x="6" y="16.5" width="36" height="5" rx="2.5" fill="currentColor"/><path d="M10.5 21.5v18.2c0 1.3 1 2.3 2.3 2.3h22.4c1.3 0 2.3-1 2.3-2.3V21.5" fill="none" stroke="currentColor" stroke-width="2.8"/><rect x="15.5" y="27" width="6.5" height="6.5" rx="1.6" fill="var(--flame)"/><rect x="26" y="27" width="6.5" height="6.5" rx="1.6" fill="var(--flame)"/></svg><span class="wort"><span class="w1">Hotel</span><span class="w2">freunde</span></span></a>
+    <a class="zurueck" href="index.html">← Zurück zur Vorschau</a>
+  </div>
+</header>
+
+<main class="shell">
+  <div class="kopf">
+    <p class="eyebrow">Rechtliches</p>
+    <h1>Datenschutzerklärung</h1>
+    <p class="stand">Stand: September 2026</p>
+  </div>
+
+  <div class="recht">
+
+    <section class="block">
+      <h2>Worum es auf dieser Seite geht</h2>
+      <p class="merke">Diese Seite ist eine geschützte Arbeitsprobe von Hotelfreunde für das Hotel Volapük. Sie lädt keine Tracker, bindet keine Werbedienste ein und setzt keine Analyse-Cookies. Es gibt daher keinen Einwilligungsbanner.</p>
+    </section>
+
+    <section class="block">
+      <h2>Verantwortliche Stelle</h2>
+      <p>Verantwortlich für die Datenverarbeitung auf dieser Vorschau ist:</p>
+      <address>
+        Martin Thun (Hotelfreunde)<br>
+        Bahnhofstr. 2a<br>
+        86500 Kutzenhausen<br>
+        Deutschland
+      </address>
+      <address>
+        Telefon: <a href="tel:+491773808049">01773808049</a><br>
+        E-Mail: <a href="mailto:hello@martinthun.com">hello@martinthun.com</a><br>
+        USt-ID: DE353432399
+      </address>
+    </section>
+
+    <section class="block">
+      <h2>Hosting und Server-Logfiles</h2>
+      <p>Diese Vorschau wird bei GitHub Pages gehostet, einem Dienst der GitHub Inc., 88 Colin P Kelly Jr Street, San Francisco, CA 94107, USA. Beim Aufruf verarbeitet der Anbieter technisch notwendige Zugriffsdaten, insbesondere Ihre IP-Adresse, Datum und Uhrzeit des Zugriffs, die aufgerufene Seite sowie Angaben zu Browser und Betriebssystem.</p>
+      <p>Die Verarbeitung erfolgt auf Grundlage unseres berechtigten Interesses an einer sicheren und technisch fehlerfreien Bereitstellung (Art. 6 Abs. 1 lit. f DSGVO). Dabei kann eine Übermittlung von Daten in die USA nicht ausgeschlossen werden. GitHub hat sich dem EU-US Data Privacy Framework unterworfen. Wir selbst haben keinen Zugriff auf diese Logfiles und führen sie nicht mit anderen Daten zusammen.</p>
+      <p>Weitere Informationen: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">Datenschutzerklärung von GitHub</a>.</p>
+    </section>
+
+    <section class="block">
+      <h2>Speicherung im Browser (Zugangssperre)</h2>
+      <p>Damit Sie das Passwort für diese Vorschau nicht bei jedem Aufruf erneut eingeben müssen, speichern wir Ihre Freigabe im lokalen Speicher Ihres Browsers (Schlüssel <code>volapuek-demo-freigabe</code>). Das eingeblendete Direktbuchungsfenster merkt sich für die Dauer Ihres Besuchs im Sitzungsspeicher, dass es bereits gezeigt wurde (Schlüssel <code>volapuek_dbw_seen</code>).</p>
+      <p>Beide Einträge bleiben ausschließlich auf Ihrem Gerät, es findet keine Übertragung an uns oder an Dritte statt. Rechtsgrundlage ist § 25 Abs. 2 TDDDG, da die Speicherung für die von Ihnen gewünschte Funktion unbedingt erforderlich ist. Sie können die Einträge jederzeit über die Einstellungen Ihres Browsers löschen.</p>
+    </section>
+
+    <section class="block">
+      <h2>Schriftarten</h2>
+      <p class="merke">Die verwendeten Schriften liegen lokal und werden direkt von hier ausgeliefert. Beim Aufruf der Seite werden keine Daten an Google übertragen.</p>
+      <p>Die Rechtstexte nutzen die Schriftarten Archivo und Fraunces, fest in die Seite eingebunden. Die Startseite selbst verwendet nur Systemschriften. Eine Verbindung zu Servern von Google oder anderen Dritten findet nicht statt.</p>
+    </section>
+
+    <section class="block">
+      <h2>Anfrageformular auf der Startseite</h2>
+      <p>Das Buchungs- und Anfrageformular auf der Startseite ist Teil des Konzeptentwurfs und ohne Funktion. Ihre Eingaben werden nicht abgeschickt, nicht gespeichert und nicht übertragen. Sie verlassen Ihren Browser nicht.</p>
+      <p>Auf der fertigen Hotelwebsite würde ein solches Formular Anfragen an das Hotel übermitteln. Dafür würde dann eine eigene Datenschutzerklärung des Hotels gelten.</p>
+    </section>
+
+    <section class="block">
+      <h2>Keine Analyse, keine Werbung, keine Weitergabe</h2>
+      <p>Auf dieser Vorschau kommen keine Analysedienste, keine Werbe- oder Tracking-Pixel und keine sozialen Plugins zum Einsatz. Es werden keine Nutzerprofile gebildet. Eine automatisierte Entscheidungsfindung einschließlich Profiling im Sinne von Art. 22 DSGVO findet nicht statt.</p>
+    </section>
+
+    <section class="block">
+      <h2>SSL- bzw. TLS-Verschlüsselung</h2>
+      <p>Diese Website nutzt eine SSL- bzw. TLS-Verschlüsselung. Sie erkennen eine verschlüsselte Verbindung an der „https://“ Adresszeile Ihres Browsers und am Schloss-Symbol.</p>
+    </section>
+
+    <section class="block">
+      <h2>Ihre Rechte</h2>
+      <p>Sie haben im Rahmen der gesetzlichen Bestimmungen jederzeit das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger sowie den Zweck der Verarbeitung, und gegebenenfalls ein Recht auf Berichtigung, Einschränkung oder Löschung. Dazu und zu allen weiteren Fragen können Sie sich über die im Impressum genannten Wege an uns wenden.</p>
+      <p>Sofern wir Daten auf Grundlage eines berechtigten Interesses verarbeiten (Art. 6 Abs. 1 lit. f DSGVO), haben Sie das Recht, aus Gründen, die sich aus Ihrer besonderen Situation ergeben, jederzeit Widerspruch einzulegen (Art. 21 DSGVO).</p>
+    </section>
+
+    <section class="block">
+      <h2>Recht auf Beschwerde bei der zuständigen Aufsichtsbehörde</h2>
+      <p>Im Falle eines datenschutzrechtlichen Verstoßes steht Ihnen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu. Für uns zuständig ist:</p>
+      <address>
+        Bayerisches Landesamt für Datenschutzaufsicht (BayLDA)<br>
+        Promenade 18<br>
+        91522 Ansbach<br>
+        <a href="https://www.lda.bayern.de" target="_blank" rel="noopener noreferrer">www.lda.bayern.de</a>
+      </address>
+    </section>
+
+    <section class="block">
+      <h2>Kontaktaufnahme per E-Mail und Telefon</h2>
+      <p>Wenn Sie uns direkt per E-Mail oder telefonisch kontaktieren, verarbeiten wir Ihre Angaben ausschließlich zur Bearbeitung Ihres Anliegens. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, sofern die Anfrage mit der Anbahnung oder Erfüllung eines Vertrags zusammenhängt, ansonsten Art. 6 Abs. 1 lit. f DSGVO. Die Daten werden gelöscht, sobald sie für den Zweck der Verarbeitung nicht mehr erforderlich sind und keine gesetzlichen Aufbewahrungspflichten bestehen.</p>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="in">
+    <p>Hotelfreunde</p>
+    <nav aria-label="Rechtliches">
+      <a href="index.html">Vorschau</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>
