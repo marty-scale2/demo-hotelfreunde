@@ -60,3 +60,9 @@ body.entsperrt .demo-lock{display:none}
 .booking:before{content:"AUGUSTINER"}
 .footer-bottom a{text-decoration:none}
 .footer-bottom a:hover{color:var(--sand)}
+.brand{display:grid;place-items:center;width:210px;height:66px;padding:6px 13px;overflow:hidden;border:1px solid rgba(255,255,255,.42);border-radius:999px;background:rgba(255,253,248,.92);box-shadow:0 12px 35px rgba(8,27,45,.2);backdrop-filter:blur(14px)}
+.brand-logo{width:100%;height:100%;object-fit:contain}
+.site-header.scrolled .brand{background:rgba(255,253,248,.88);border-color:rgba(21,57,91,.14);box-shadow:0 8px 24px rgba(8,27,45,.1)}
+.demo-lock-logo-wrap{width:min(315px,82vw);margin:0 auto 28px;padding:14px 20px 12px;overflow:hidden;border:1px solid rgba(255,255,255,.22);border-radius:999px;background:rgba(255,253,248,.96);box-shadow:0 18px 48px rgba(0,0,0,.25)}
+.demo-lock-logo{width:100%;height:auto}
+@media(max-width:760px){.brand{width:166px;height:52px;padding:5px 10px}.demo-lock-logo-wrap{margin-bottom:24px;padding:12px 16px 10px}}
