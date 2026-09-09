@@ -10,7 +10,61 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%23101a14'/%3E%3Ccircle cx='32' cy='32' r='14' fill='%23c9ad83'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="hotel-augustiner-tor.css">
 </head>
-<body class="is-loading entsperrt">
+<body class="is-loading">
+  <div class="demo-lock" id="demoLock" role="dialog" aria-modal="true" aria-labelledby="demoLockTitel" aria-describedby="demoLockText">
+    <div class="demo-lock-karte">
+      <p class="demo-lock-marke">Hotel Augustiner Tor</p>
+      <h1 id="demoLockTitel">Diese Vorschau ist geschützt.</h1>
+      <p class="demo-lock-text" id="demoLockText">Eine persönliche Arbeitsprobe von Hotelfreunde. Bitte geben Sie das Passwort ein.</p>
+      <form id="demoLockForm" autocomplete="off">
+        <label class="demo-lock-feld">
+          <span>Passwort</span>
+          <input type="password" id="demoLockEingabe" inputmode="text" autocapitalize="off" autocomplete="off" spellcheck="false" required>
+        </label>
+        <button type="submit">Vorschau ansehen<span aria-hidden="true">→</span></button>
+      </form>
+      <p class="demo-lock-fehler" id="demoLockFehler" role="alert">Das Passwort ist nicht korrekt.</p>
+    </div>
+  </div>
+  <script>
+    (function(){
+      "use strict";
+      var SCHLUESSEL = "augustiner-tor-vorschau-freigabe";
+      var body = document.body;
+      var frei = false;
+      try { frei = sessionStorage.getItem(SCHLUESSEL) === "1"; } catch (e) {}
+      if (frei) { body.classList.add("entsperrt"); return; }
+
+      var lock = document.getElementById("demoLock");
+      var form = document.getElementById("demoLockForm");
+      var feld = document.getElementById("demoLockEingabe");
+      var fehler = document.getElementById("demoLockFehler");
+      feld.focus();
+
+      feld.addEventListener("input", function(){
+        feld.removeAttribute("aria-invalid");
+        fehler.classList.remove("zeigen");
+      });
+
+      form.addEventListener("submit", function(ev){
+        ev.preventDefault();
+        var wert = (feld.value || "").trim().toLocaleLowerCase("de-DE");
+        if (wert === "augustin") {
+          try { sessionStorage.setItem(SCHLUESSEL, "1"); } catch (e) {}
+          body.classList.add("entsperrt");
+          lock.classList.add("weg");
+          setTimeout(function(){ lock.hidden = true; }, 550);
+        } else {
+          feld.setAttribute("aria-invalid", "true");
+          fehler.classList.add("zeigen");
+          lock.classList.add("wackeln");
+          feld.value = "";
+          feld.focus();
+          setTimeout(function(){ lock.classList.remove("wackeln"); }, 420);
+        }
+      });
+    })();
+  </script>
   <div class="preloader" aria-hidden="true"><div><i></i><span>Hotel Augustiner Tor</span></div></div>
   <div class="scroll-progress" aria-hidden="true"></div><div class="cursor" aria-hidden="true"></div><div class="cursor-dot" aria-hidden="true"></div>
   <header class="site-header" id="top">
