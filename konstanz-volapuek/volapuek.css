@@ -57,10 +57,125 @@ body.entsperrt .demo-lock{display:none}
 @media(max-width:760px){.demo-lock-text{max-width:280px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.has-js .reveal{opacity:1;transform:none}.cursor,.cursor-dot{display:none}}
 
-/* Volapuek-Farbwelt: tiefes Seegruen ueber dem Ueberlinger See, warmer
-   Terrakotta-Akzent als Nicken zum roten Volapuek-Logo. */
-:root{--ink:#1b2622;--forest:#1f4b45;--deep:#0e2420;--moss:#5f7d75;--sage:#aec4bd;--sand:#c25f43;--cream:#f0ebe0;--paper:#f7f4ec;--white:#fffdf7;--line:rgba(31,75,69,.16)}
-.voices{background:#dae3de}
-.booking:before{content:"VOLAP\00DCK"}
+/* ============================================================
+   Volapuek-Markenlook: weiss und modern, mit dem Rot (#b30101)
+   und einem Navy (#0c1e3d) aus dem Original-Branding von
+   volapuek.de. Ueberschreibt die dunkle Editorial-Basis darueber.
+   ============================================================ */
+:root{
+  --ink:#1a1c22;--forest:#0c1e3d;--deep:#0c1e3d;--moss:#6c7079;
+  --sage:#c7b489;--sand:#b30101;--cream:#f7f4ef;--paper:#ffffff;
+  --white:#ffffff;--line:rgba(20,22,30,.12);--gold:#b8923f;
+}
+::selection{background:var(--sand);color:#fff}
+:focus-visible{outline-color:var(--sand)}
+
+/* ---- Kopf ---- */
+.site-header.scrolled{background:rgba(255,255,255,.92)}
+
+/* ---- Hero: helleres, modernes Scrim ---- */
+.hero{background:#e9e6df}
+.hero-media:after{background:linear-gradient(180deg,rgba(12,18,32,.46),rgba(12,18,32,.2) 45%,rgba(12,18,32,.62)),linear-gradient(90deg,rgba(12,18,32,.24),transparent 58%)}
+.hero h1 em{color:#fff}
+.quick-book{background:rgba(255,255,255,.96)}
+.quick-book button{background:var(--forest)}
+.quick-book button:hover{background:var(--sand);color:#fff}
+
+/* ---- Marken-Akzent auf allen kleinen Labels ---- */
+.section-tag{color:var(--sand)}
+.intro-copy h2 em,.table-copy h2 em{color:var(--forest)}
+.intro-text{color:#585c64}
+
+/* ---- Preloader hell ---- */
+.preloader{background:var(--cream);color:var(--forest)}
+.preloader i{border-color:rgba(12,30,61,.3)}
+.preloader i:after{background:var(--sand)}
+
+/* ---- Mosaik ---- */
+.mosaic-number{color:var(--sage)}
+.mosaic-quote{color:var(--forest)}
+
+/* ---- Marquee ---- */
+.marquee{border-color:var(--line)}
+.marquee i{background:var(--sand)}
+
+/* ---- Erlebnisse: von dunkel auf hell ---- */
+.experiences{background:var(--cream);color:var(--ink)}
+.experiences .section-tag{color:var(--sand)}
+.experiences .section-head-text{color:#585c64}
+.experience span{color:var(--sand)}
+
+/* ---- Zimmer ---- */
+.rooms{background:var(--paper)}
+.rooms .section-head-text{color:var(--moss)}
+.room-card{background:var(--forest)}
+
+/* ---- Kino-Band ---- */
+.cinema:after{background:rgba(12,18,32,.42)}
+
+/* ---- Tisch / Restaurant ---- */
+.table-section{background:var(--cream)}
+.table-images img:last-child{border-color:var(--cream)}
+.table-copy>p:not(.section-tag){color:#585c64}
+.table-facts strong{color:var(--sand)}
+
+/* ---- Stimme ---- */
+.voices{background:#faf6f4}
+.voices blockquote{color:var(--ink)}
+.voices cite{color:var(--moss)}
+.voice-dots i{background:rgba(20,22,30,.16)}
+.voice-dots i:first-child{background:var(--sand)}
+
+/* ---- Buchung: von dunkel auf hell ---- */
+.booking{background:var(--cream);color:var(--ink)}
+.booking:before{color:rgba(12,30,61,.05);content:"VOLAP\00DCK"}
+.booking-head p{color:#585c64}
+.booking-form{border-top-color:var(--line)}
+.booking-fields input,.booking-fields select,.booking-fields textarea{border-bottom-color:rgba(20,22,30,.25);color:var(--ink);color-scheme:light}
+.booking-fields input:focus,.booking-fields select:focus,.booking-fields textarea:focus{border-color:var(--sand)}
+.booking-fields textarea.gefuellt{background:rgba(179,1,1,.06);border-color:var(--sand)}
+.booking-aside{border-left-color:var(--line)}
+.booking-aside li{color:#4a4f58}
+.booking-aside li:before{border-color:rgba(20,22,30,.2);color:var(--sand)}
+.submit-button{background:var(--sand);color:#fff}
+.submit-button:hover{background:#8f0202}
+.form-note{color:#8a8f98}
+.confirmation{border-color:var(--sand);background:#fff;color:var(--ink)}
+
+/* ---- Fuss: hell ---- */
+.site-footer{background:var(--cream);color:var(--ink)}
+.footer-top{border-top-color:var(--line)}
+.footer-brand small{color:var(--moss)}
+.footer-top h3{color:var(--sand)}
+.footer-top p,.footer-top a{color:#4a4f58}
+.footer-top a:hover{color:var(--sand)}
+.footer-bottom{border-top-color:rgba(20,22,30,.1);color:#9096a0}
 .footer-bottom a{text-decoration:none}
 .footer-bottom a:hover{color:var(--sand)}
+
+/* ---- Cursor-Akzent ---- */
+.cursor{border-color:rgba(179,1,1,.55)}
+.cursor-dot{background:var(--sand)}
+.cursor.hover{background:rgba(179,1,1,.1)}
+
+/* ---- Direktbucher-Knopf: unten LINKS, weiss-modern ---- */
+.demo-trigger{left:22px;right:auto;background:rgba(255,255,255,.97);color:var(--ink);border-color:rgba(20,22,30,.14);box-shadow:0 14px 38px rgba(12,30,61,.16)}
+.demo-trigger:before{background:var(--sand);box-shadow:0 0 0 5px rgba(179,1,1,.12)}
+.demo-trigger small{color:var(--moss)}
+.demo-trigger:hover{background:#fff;border-color:var(--sand);transform:translateY(-4px)}
+
+/* ---- Zugangssperre: helle Karte ---- */
+.demo-lock{background:radial-gradient(120% 100% at 50% 12%,#ffffff,#efece7 60%)}
+.demo-lock-karte{color:var(--ink)}
+.demo-lock-marke{color:var(--sand)}
+.demo-lock-text{color:#585c64}
+.demo-lock-feld span{color:var(--moss)}
+.demo-lock-feld input{border-bottom-color:rgba(20,22,30,.25);color:var(--ink);color-scheme:light}
+.demo-lock-feld input:focus{border-color:var(--sand)}
+#demoLockForm button{background:var(--sand);color:#fff}
+#demoLockForm button:hover{background:#8f0202}
+.demo-lock-fehler{color:#b30101}
+
+@media(max-width:760px){
+  .demo-trigger{left:12px;right:auto;bottom:12px}
+}

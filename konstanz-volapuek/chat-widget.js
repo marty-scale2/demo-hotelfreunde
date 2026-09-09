@@ -18,10 +18,10 @@
 
     hotelName: "Hotel Volapük",
 
-    // Farben, an die Volapük-Demo angeglichen (Seegrün + Terrakotta-Akzent).
-    primary: "#1f4b45",
+    // Farben aus dem Volapük-Branding: Navy als Grundton, Rot als Akzent.
+    primary: "#0c1e3d",
     primaryText: "#ffffff",
-    accent: "#c25f43",
+    accent: "#b30101",
 
     // Text im geschlossenen Zustand, erscheint als kleine Sprechblase
     teaser: "Fragen zum Hotel Volapük? Ich antworte sofort.",
@@ -48,7 +48,7 @@
     // Sekunden, nach denen die Teaser-Blase von selbst erscheint. 0 = nie.
     teaserDelay: 9,
 
-    position: "left" // "right" oder "left"
+    position: "right" // "right" oder "left"
   };
 
   /* ---------- Ab hier muss normalerweise nichts geändert werden ---------- */

@@ -8,16 +8,19 @@
   var CONFIG = {
     hotelName: 'Hotel Volapük',
 
-    primaryColor: '#1f4b45',  // Akzentfarbe (CTA)
-    textColor: '#1b2622',
+    primaryColor: '#b30101',  // Akzentfarbe (CTA), Volapük-Rot
+    textColor: '#1a1c22',
 
-    headline: 'Direkt buchen, ohne Provision',
-    benefitText: 'Fragen Sie Ihren Aufenthalt direkt beim Hotel Volapük an, schneller als über jedes Portal.',
+    headline: 'Gratis Willkommensdrink',
+    benefitText: 'bei Buchung über unsere Website.',
+
+    // Bild oben in der Karte, optional. Leer = kein Bild.
+    imageUrl: 'img/welcome-drink.webp',
 
     promoCode: '',
     promoHint: '',
 
-    ctaLabel: 'JETZT DIREKT ANFRAGEN',
+    ctaLabel: 'JETZT DIREKT BUCHEN',
     bookingUrl: '#buchen',
 
     logoUrl: '',              // optional
@@ -119,13 +122,14 @@
     return `
 .dbw-ov{position:absolute;top:0;right:0;bottom:0;left:0;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(15,15,15,.55);opacity:0;transition:opacity .18s}
 .dbw-ov.dbw-vis{opacity:1}
-.dbw-card{position:relative;width:100%;max-width:380px;max-height:88vh;overflow-y:auto;padding:26px 22px 22px;background:#fff;border-radius:14px;text-align:center;color:var(--dbw-text);font:400 15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;box-shadow:0 18px 50px rgba(0,0,0,.3);transform:translateY(14px) scale(.98);transition:transform .18s}
+.dbw-card{position:relative;width:100%;max-width:392px;max-height:90vh;overflow:hidden auto;padding:24px;background:#fff;border-radius:18px;text-align:center;color:var(--dbw-text);font:400 15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;box-shadow:0 24px 60px rgba(12,18,32,.34);transform:translateY(14px) scale(.98);transition:transform .18s}
 .dbw-card,.dbw-card *{box-sizing:border-box;font-family:inherit}
 .dbw-ov.dbw-vis .dbw-card{transform:none}
-.dbw-x{position:absolute;top:6px;right:6px;width:42px;height:42px;padding:0;border:0;background:none;color:#8a8a8a;font-size:26px;line-height:1;border-radius:8px;cursor:pointer}
+.dbw-x{position:absolute;z-index:2;top:12px;right:12px;width:34px;height:34px;padding:0;border:0;background:rgba(255,255,255,.9);color:#2a2a2a;font-size:22px;line-height:1;border-radius:50%;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.18)}
+.dbw-img{display:block;width:calc(100% + 48px);margin:-24px -24px 20px;height:188px;object-fit:cover}
 .dbw-logo{display:block;max-height:46px;max-width:60%;margin:0 auto 14px}
-.dbw-h{margin:0 0 8px;font-size:22px;line-height:1.25;font-weight:700}
-.dbw-b{margin:0 0 18px;opacity:.85}
+.dbw-h{margin:0 0 6px;font-size:25px;line-height:1.18;font-weight:750;letter-spacing:-.01em}
+.dbw-b{margin:0 0 20px;font-size:15px;opacity:.82}
 .dbw-code{display:flex;gap:8px;margin:0 0 8px}
 .dbw-val{flex:1;display:flex;align-items:center;justify-content:center;min-height:54px;padding:6px 10px;border:2px dashed var(--dbw-primary);border-radius:10px;background:#fbfbfb;color:var(--dbw-primary);font-size:24px;font-weight:700;letter-spacing:.1em}
 .dbw-copy,.dbw-send{border:1px solid #dadada;border-radius:10px;background:#fff;color:var(--dbw-text);font-size:14px;font-weight:600;cursor:pointer}
@@ -151,6 +155,7 @@
 
   function markup() {
     var logo = CONFIG.logoUrl ? `<img class="dbw-logo" src="${esc(CONFIG.logoUrl)}" alt="${esc(CONFIG.hotelName)}">` : '';
+    var bild = CONFIG.imageUrl ? `<img class="dbw-img" src="${esc(CONFIG.imageUrl)}" alt="" aria-hidden="true">` : '';
     var code = CONFIG.promoCode ? `<div class="dbw-code"><div class="dbw-val">${esc(CONFIG.promoCode)}</div>
 <button class="dbw-copy" type="button"><i class="dbw-ico" aria-hidden="true"></i><span>Code kopieren</span></button></div>
 <p class="dbw-hint">${esc(CONFIG.promoHint)}</p>
@@ -164,7 +169,7 @@
     return `<div class="dbw-ov">
 <div class="dbw-card" role="dialog" aria-modal="true" aria-labelledby="dbw-h" aria-describedby="dbw-b">
 <button class="dbw-x" type="button" aria-label="Hinweis schließen">&times;</button>
-${logo}<h2 class="dbw-h" id="dbw-h">${esc(CONFIG.headline)}</h2>
+${bild}${logo}<h2 class="dbw-h" id="dbw-h">${esc(CONFIG.headline)}</h2>
 <p class="dbw-b" id="dbw-b">${esc(CONFIG.benefitText)}</p>
 ${code}
 <a class="dbw-cta" href="${esc(CONFIG.bookingUrl)}">${esc(CONFIG.ctaLabel)}</a>
