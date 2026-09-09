@@ -63,9 +63,9 @@ body.entsperrt .demo-lock{display:none}
    volapuek.de. Ueberschreibt die dunkle Editorial-Basis darueber.
    ============================================================ */
 :root{
-  --ink:#1a1c22;--forest:#0c1e3d;--deep:#0c1e3d;--moss:#6c7079;
-  --sage:#c7b489;--sand:#b30101;--cream:#f7f4ef;--paper:#ffffff;
-  --white:#ffffff;--line:rgba(20,22,30,.12);--gold:#b8923f;
+  --ink:#1c1a19;--forest:#b30101;--deep:#231f1d;--moss:#6c6663;
+  --sage:#c7b489;--sand:#b30101;--cream:#f7f3ee;--paper:#ffffff;
+  --white:#ffffff;--line:rgba(28,22,20,.12);--gold:#b8923f;--rot-tief:#8a0202;
 }
 ::selection{background:var(--sand);color:#fff}
 :focus-visible{outline-color:var(--sand)}
@@ -74,12 +74,12 @@ body.entsperrt .demo-lock{display:none}
 .site-header.scrolled{background:rgba(255,255,255,.92)}
 
 /* ---- Hero: helleres, modernes Scrim ---- */
-.hero{background:#e9e6df}
-.hero-media:after{background:linear-gradient(180deg,rgba(12,18,32,.46),rgba(12,18,32,.2) 45%,rgba(12,18,32,.62)),linear-gradient(90deg,rgba(12,18,32,.24),transparent 58%)}
+.hero{background:#e9e5df}
+.hero-media:after{background:linear-gradient(180deg,rgba(26,18,16,.5),rgba(26,18,16,.22) 45%,rgba(26,18,16,.64)),linear-gradient(90deg,rgba(26,18,16,.26),transparent 58%)}
 .hero h1 em{color:#fff}
 .quick-book{background:rgba(255,255,255,.96)}
-.quick-book button{background:var(--forest)}
-.quick-book button:hover{background:var(--sand);color:#fff}
+.quick-book button{background:var(--sand)}
+.quick-book button:hover{background:var(--rot-tief);color:#fff}
 
 /* ---- Marken-Akzent auf allen kleinen Labels ---- */
 .section-tag{color:var(--sand)}
@@ -128,7 +128,7 @@ body.entsperrt .demo-lock{display:none}
 
 /* ---- Buchung: von dunkel auf hell ---- */
 .booking{background:var(--cream);color:var(--ink)}
-.booking:before{color:rgba(12,30,61,.05);content:"VOLAP\00DCK"}
+.booking:before{color:rgba(179,1,1,.05);content:"VOLAP\00DCK"}
 .booking-head p{color:#585c64}
 .booking-form{border-top-color:var(--line)}
 .booking-fields input,.booking-fields select,.booking-fields textarea{border-bottom-color:rgba(20,22,30,.25);color:var(--ink);color-scheme:light}
@@ -138,7 +138,7 @@ body.entsperrt .demo-lock{display:none}
 .booking-aside li{color:#4a4f58}
 .booking-aside li:before{border-color:rgba(20,22,30,.2);color:var(--sand)}
 .submit-button{background:var(--sand);color:#fff}
-.submit-button:hover{background:#8f0202}
+.submit-button:hover{background:var(--rot-tief)}
 .form-note{color:#8a8f98}
 .confirmation{border-color:var(--sand);background:#fff;color:var(--ink)}
 
@@ -159,7 +159,7 @@ body.entsperrt .demo-lock{display:none}
 .cursor.hover{background:rgba(179,1,1,.1)}
 
 /* ---- Direktbucher-Knopf: unten LINKS, weiss-modern ---- */
-.demo-trigger{left:22px;right:auto;background:rgba(255,255,255,.97);color:var(--ink);border-color:rgba(20,22,30,.14);box-shadow:0 14px 38px rgba(12,30,61,.16)}
+.demo-trigger{left:22px;right:auto;background:rgba(255,255,255,.97);color:var(--ink);border-color:rgba(28,22,20,.14);box-shadow:0 14px 38px rgba(70,20,20,.16)}
 .demo-trigger:before{background:var(--sand);box-shadow:0 0 0 5px rgba(179,1,1,.12)}
 .demo-trigger small{color:var(--moss)}
 .demo-trigger:hover{background:#fff;border-color:var(--sand);transform:translateY(-4px)}
@@ -173,7 +173,7 @@ body.entsperrt .demo-lock{display:none}
 .demo-lock-feld input{border-bottom-color:rgba(20,22,30,.25);color:var(--ink);color-scheme:light}
 .demo-lock-feld input:focus{border-color:var(--sand)}
 #demoLockForm button{background:var(--sand);color:#fff}
-#demoLockForm button:hover{background:#8f0202}
+#demoLockForm button:hover{background:var(--rot-tief)}
 .demo-lock-fehler{color:#b30101}
 
 @media(max-width:760px){

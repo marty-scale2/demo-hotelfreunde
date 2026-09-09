@@ -122,7 +122,7 @@
     return `
 .dbw-ov{position:absolute;top:0;right:0;bottom:0;left:0;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(15,15,15,.55);opacity:0;transition:opacity .18s}
 .dbw-ov.dbw-vis{opacity:1}
-.dbw-card{position:relative;width:100%;max-width:392px;max-height:90vh;overflow:hidden auto;padding:24px;background:#fff;border-radius:18px;text-align:center;color:var(--dbw-text);font:400 15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;box-shadow:0 24px 60px rgba(12,18,32,.34);transform:translateY(14px) scale(.98);transition:transform .18s}
+.dbw-card{position:relative;width:100%;max-width:392px;max-height:90vh;overflow:hidden auto;padding:24px;background:#fff;border-radius:18px;text-align:center;color:var(--dbw-text);font:400 15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;box-shadow:0 24px 60px rgba(40,16,16,.34);transform:translateY(14px) scale(.98);transition:transform .18s}
 .dbw-card,.dbw-card *{box-sizing:border-box;font-family:inherit}
 .dbw-ov.dbw-vis .dbw-card{transform:none}
 .dbw-x{position:absolute;z-index:2;top:12px;right:12px;width:34px;height:34px;padding:0;border:0;background:rgba(255,255,255,.9);color:#2a2a2a;font-size:22px;line-height:1;border-radius:50%;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.18)}

@@ -18,10 +18,10 @@
 
     hotelName: "Hotel Volapük",
 
-    // Farben aus dem Volapük-Branding: Navy als Grundton, Rot als Akzent.
-    primary: "#0c1e3d",
+    // Farben aus dem Volapük-Branding: Rot wie im Original-Logo.
+    primary: "#b30101",
     primaryText: "#ffffff",
-    accent: "#b30101",
+    accent: "#8a0202",
 
     // Text im geschlossenen Zustand, erscheint als kleine Sprechblase
     teaser: "Fragen zum Hotel Volapük? Ich antworte sofort.",
