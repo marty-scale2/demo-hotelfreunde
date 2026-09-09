@@ -142,7 +142,7 @@ footer nav a:hover{border-bottom-color:var(--flame)}
 
     <section class="block">
       <h2>Worum es auf dieser Seite geht</h2>
-      <p class="merke">Diese Seite ist eine geschützte Arbeitsprobe von Hotelfreunde für das Hotel Volapük. Sie lädt keine Tracker, bindet keine Werbedienste ein und setzt keine Analyse-Cookies. Es gibt daher keinen Einwilligungsbanner.</p>
+      <p class="merke">Diese Seite ist eine geschützte Arbeitsprobe von Hotelfreunde für das Hotel Volapük. Sie lädt keine Tracker, bindet keine Werbedienste ein und setzt keine Analyse-Cookies. Es gibt daher keinen Einwilligungsbanner. Die einzige Verbindung nach außen entsteht, wenn Sie den Chat unten aktiv öffnen und eine Nachricht schicken (siehe „KI-Chat" weiter unten).</p>
     </section>
 
     <section class="block">
@@ -170,8 +170,8 @@ footer nav a:hover{border-bottom-color:var(--flame)}
 
     <section class="block">
       <h2>Speicherung im Browser (Zugangssperre)</h2>
-      <p>Damit Sie das Passwort für diese Vorschau nicht bei jedem Aufruf erneut eingeben müssen, speichern wir Ihre Freigabe im lokalen Speicher Ihres Browsers (Schlüssel <code>volapuek-demo-freigabe</code>). Das eingeblendete Direktbuchungsfenster merkt sich für die Dauer Ihres Besuchs im Sitzungsspeicher, dass es bereits gezeigt wurde (Schlüssel <code>volapuek_dbw_seen</code>).</p>
-      <p>Beide Einträge bleiben ausschließlich auf Ihrem Gerät, es findet keine Übertragung an uns oder an Dritte statt. Rechtsgrundlage ist § 25 Abs. 2 TDDDG, da die Speicherung für die von Ihnen gewünschte Funktion unbedingt erforderlich ist. Sie können die Einträge jederzeit über die Einstellungen Ihres Browsers löschen.</p>
+      <p>Damit Sie das Passwort für diese Vorschau nicht bei jedem Aufruf erneut eingeben müssen, speichern wir Ihre Freigabe im lokalen Speicher Ihres Browsers (Schlüssel <code>volapuek-demo-freigabe</code>). Das eingeblendete Direktbuchungsfenster merkt sich für die Dauer Ihres Besuchs im Sitzungsspeicher, dass es bereits gezeigt wurde (Schlüssel <code>volapuek_dbw_seen</code>). Sobald Sie den Chat nutzen, legt dieser im Sitzungsspeicher eine zufällige Gesprächskennung ab (Schlüssel <code>hf-chat-session</code>), damit Ihre Nachrichten innerhalb eines Besuchs zusammengehören. Sie wird beim Schließen des Browser-Tabs verworfen.</p>
+      <p>Diese Einträge bleiben auf Ihrem Gerät. Die Gesprächskennung wird zusätzlich mit jeder Chat-Nachricht an den Chat-Server übermittelt (siehe „KI-Chat"). Rechtsgrundlage für die Speicherung ist § 25 Abs. 2 TDDDG, da sie für die von Ihnen gewünschte Funktion unbedingt erforderlich ist. Sie können die Einträge jederzeit über die Einstellungen Ihres Browsers löschen.</p>
     </section>
 
     <section class="block">
@@ -187,8 +187,17 @@ footer nav a:hover{border-bottom-color:var(--flame)}
     </section>
 
     <section class="block">
-      <h2>Keine Analyse, keine Werbung, keine Weitergabe</h2>
-      <p>Auf dieser Vorschau kommen keine Analysedienste, keine Werbe- oder Tracking-Pixel und keine sozialen Plugins zum Einsatz. Es werden keine Nutzerprofile gebildet. Eine automatisierte Entscheidungsfindung einschließlich Profiling im Sinne von Art. 22 DSGVO findet nicht statt.</p>
+      <h2>KI-Chat (digitale Rezeption)</h2>
+      <p>Unten links auf der Seite finden Sie einen Chat-Knopf. Solange Sie ihn nicht öffnen und keine Nachricht senden, passiert nichts. Wenn Sie eine Nachricht abschicken, werden übertragen: der Text Ihrer Nachricht, die zufällige Gesprächskennung aus dem Sitzungsspeicher (<code>hf-chat-session</code>), der Name des Hotels und die Adresse der aufgerufenen Seite. Ihre IP-Adresse wird dabei technisch bedingt an den Chat-Server übermittelt.</p>
+      <p>Empfänger ist ein Automatisierungs-Server, den Hotelfreunde betreibt (Software: n8n, gehostet auf einem Server bei Hostinger, <code>n8n.srv1156975.hstgr.cloud</code>). Dort erzeugt ein KI-Sprachmodell die Antwort. Dabei kann ein KI-Anbieter als weiterer Auftragsverarbeiter eingebunden sein, und eine Verarbeitung außerhalb der EU ist möglich.</p>
+      <p>Zweck ist allein die sofortige Beantwortung Ihrer Fragen zum Haus. Rechtsgrundlage ist unser berechtigtes Interesse an einer schnellen Auskunft (Art. 6 Abs. 1 lit. f DSGVO); indem Sie den Chat aktiv öffnen und eine Nachricht senden, bringen Sie Ihr Auskunftsersuchen selbst ein. Die Chat-Inhalte werden nicht für Werbung genutzt, nicht zu Profilen verknüpft und dienen keiner automatisierten Entscheidung mit rechtlicher Wirkung im Sinne von Art. 22 DSGVO.</p>
+      <p class="merke">Bitte geben Sie im Chat keine sensiblen Daten ein (Gesundheit, Zahlungsdaten, Ausweisnummern). Für eine verbindliche Buchung oder Beschwerde nutzen Sie bitte Telefon oder E-Mail.</p>
+      <p>Die übermittelten Nachrichten werden gelöscht, sobald sie für die Bearbeitung und die technische Auswertung des Chats nicht mehr erforderlich sind.</p>
+    </section>
+
+    <section class="block">
+      <h2>Keine Analyse, keine Werbung</h2>
+      <p>Abgesehen vom KI-Chat kommen auf dieser Vorschau keine Analysedienste, keine Werbe- oder Tracking-Pixel und keine sozialen Plugins zum Einsatz. Es werden keine Nutzerprofile gebildet und keine Daten an Werbenetzwerke weitergegeben.</p>
     </section>
 
     <section class="block">
