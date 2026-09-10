@@ -264,8 +264,10 @@ ${mail}</div></div>`;
       function () { setStatus('Das hat gerade nicht geklappt'); });
   }
 
+  function previewUnlocked() { return document.body.classList.contains('entsperrt'); }
+
   function openOverlay(reason) {
-    if (isOpen) return;
+    if (!previewUnlocked() || isOpen) return;
     if (!ui) build();
     isOpen = true;
     lastFocus = document.activeElement;
@@ -312,8 +314,15 @@ ${mail}</div></div>`;
     } catch (e) {}
   }
 
+  var initialized = false;
+
   function init() {
-    if (window.top !== window.self) return;  // nicht in fremden iframes
+    if (window.top !== window.self || initialized) return;  // nicht in fremden iframes
+    if (!previewUnlocked()) {
+      document.addEventListener('preview:unlocked', init, { once: true });
+      return;
+    }
+    initialized = true;
     if (excluded() || seen()) return;
     setTimeout(function () { isTouch() ? armMobile() : armExitIntent(); }, TUNING.armDelayMs);
   }

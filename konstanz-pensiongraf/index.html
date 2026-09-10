@@ -41,7 +41,7 @@
         var wert = (feld.value || "").trim().toLowerCase();
         if (wert === "graf") {
           try { sessionStorage.setItem(SCHLUESSEL, "1"); } catch (e) {}
-          body.classList.add("entsperrt"); lock.classList.add("weg");
+          body.classList.add("entsperrt"); document.dispatchEvent(new CustomEvent("preview:unlocked")); lock.classList.add("weg");
           setTimeout(function(){ lock.hidden = true; }, 550);
         } else {
           feld.setAttribute("aria-invalid", "true"); fehler.classList.add("zeigen"); lock.classList.add("wackeln"); feld.value = ""; feld.focus();
@@ -128,6 +128,6 @@
     <div class="footer-bottom"><span>© 2026 Hotel Pension Graf · Konzeptwebsite von Hotelfreunde</span><span><a href="https://www.hotel-pension-graf.de/impressum-und-datenschutz" target="_blank" rel="noopener">Impressum &amp; Datenschutz</a></span></div>
   </footer>
   <button class="demo-trigger" type="button" id="demoBtn">Direktanfrage öffnen<small>Zimmerwunsch senden</small></button>
-  <script src="widget.js?v=1" defer></script><script src="pensiongraf.js?v=1"></script>
+  <script src="widget.js?v=2" defer></script><script src="pensiongraf.js?v=1"></script>
 </body>
 </html>
