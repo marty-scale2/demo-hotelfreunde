@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="de" class="has-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#071a36">
+  <meta name="description" content="Hotel Pension Graf – familiengeführte Nichtraucher-Pension im Herzen von Konstanz, direkt gegenüber dem LAGO und nur wenige Schritte von Bahnhof, Bodensee und Schweizer Grenze entfernt.">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+  <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+  <meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+  <title>Hotel Pension Graf Konstanz — Mitten im Konstanzer Leben</title>
+  <link rel="icon" href="img/graf-logo.png">
+  <link rel="stylesheet" href="pensiongraf.css?v=1">
+</head>
+<body class="is-loading">
+  <div class="demo-lock" id="demoLock" role="dialog" aria-modal="true" aria-labelledby="demoLockTitel" aria-describedby="demoLockText">
+    <div class="demo-lock-karte">
+      <div class="demo-lock-logo"><img src="img/graf-logo.png" alt="Logo Hotel Pension Graf"></div>
+      <p class="demo-lock-marke">Hotel Pension Graf · Konstanz</p>
+      <h1 id="demoLockTitel">Diese Vorschau ist geschützt.</h1>
+      <p class="demo-lock-text" id="demoLockText">Eine persönliche Arbeitsprobe von Hotelfreunde. Bitte geben Sie das Passwort ein.</p>
+      <form id="demoLockForm" autocomplete="off">
+        <label class="demo-lock-feld"><span>Passwort</span><input type="password" id="demoLockEingabe" inputmode="text" autocapitalize="off" autocomplete="off" spellcheck="false" required></label>
+        <button type="submit">Vorschau ansehen<span aria-hidden="true">→</span></button>
+      </form>
+      <p class="demo-lock-fehler" id="demoLockFehler" role="alert">Das Passwort ist nicht korrekt.</p>
+    </div>
+  </div>
+  <script>
+    (function(){
+      "use strict";
+      var SCHLUESSEL = "pensiongraf-demo-freigabe";
+      var body = document.body;
+      var frei = false;
+      try { frei = sessionStorage.getItem(SCHLUESSEL) === "1"; } catch (e) {}
+      if (frei) { body.classList.add("entsperrt"); return; }
+      var lock = document.getElementById("demoLock"), form = document.getElementById("demoLockForm"), feld = document.getElementById("demoLockEingabe"), fehler = document.getElementById("demoLockFehler");
+      feld.focus();
+      form.addEventListener("submit", function(ev){
+        ev.preventDefault();
+        var wert = (feld.value || "").trim().toLowerCase();
+        if (wert === "graf") {
+          try { sessionStorage.setItem(SCHLUESSEL, "1"); } catch (e) {}
+          body.classList.add("entsperrt"); lock.classList.add("weg");
+          setTimeout(function(){ lock.hidden = true; }, 550);
+        } else {
+          feld.setAttribute("aria-invalid", "true"); fehler.classList.add("zeigen"); lock.classList.add("wackeln"); feld.value = ""; feld.focus();
+          setTimeout(function(){ lock.classList.remove("wackeln"); }, 420);
+        }
+      });
+    })();
+  </script>
+  <div class="preloader" aria-hidden="true"><div><i></i><span>Hotel Pension Graf</span></div></div>
+  <div class="scroll-progress" aria-hidden="true"></div><div class="cursor" aria-hidden="true"></div><div class="cursor-dot" aria-hidden="true"></div>
+  <header class="site-header" id="top">
+    <nav class="nav" aria-label="Hauptnavigation"><a href="#pension">Die Pension</a><a href="#zimmer">Zimmer</a><a href="#wissen">Gut zu wissen</a><a href="#lage">Lage</a></nav>
+    <a class="brand" href="#top"><span>Pension Graf</span><small>Nichtraucher-Pension · Konstanz</small></a>
+    <a class="header-action" href="#anfragen"><span>Zimmer anfragen</span></a>
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Familie Günther · Wiesenstraße 2</p>
+        <h1 id="hero-title">Mitten in Konstanz. <em>Ganz nah am See.</em></h1>
+        <p class="hero-lead">Eine persönliche Nichtraucher-Pension gegenüber dem LAGO – nur wenige Schritte von Bahnhof, Schweizer Grenze, SEA LIFE und Schiffsanlegern entfernt.</p>
+        <a class="hero-link" href="#pension">Die Pension entdecken <span>↓</span></a>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-frame"><img src="img/graf-04.jpg" alt="Impression der Hotel Pension Graf in Konstanz" fetchpriority="high"></div>
+        <div class="hero-stamp"><strong>Nah</strong><span>zu See &amp;<br>Bahnhof</span></div>
+        <p class="hero-note">Gegenüber LAGO · nahe Schweizer Grenze</p>
+      </div>
+      <form class="quick-book" id="quickBook">
+        <label><span>Anreise</span><input type="date" id="quick-arrival" required></label>
+        <label><span>Abreise</span><input type="date" id="quick-departure" required></label>
+        <label class="quick-guests"><span>Gäste</span><select id="quick-guests"><option value="2">2 Gäste</option><option value="1">1 Gast</option><option value="3">3 Gäste</option><option value="4">4 Gäste</option><option value="5">5 Gäste</option><option value="6">6 Gäste</option></select></label>
+        <button type="submit">Zimmer anfragen</button>
+      </form>
+    </section>
+    <section class="intro" id="pension" aria-labelledby="intro-title"><div class="intro-grid">
+      <p class="section-tag reveal">Willkommen bei Familie Günther</p>
+      <div class="intro-copy"><h2 class="reveal" id="intro-title">Klein, persönlich<br><em>und mittendrin.</em></h2><div class="intro-bottom">
+        <p class="intro-text reveal d1">Die Pension Graf ist der ideale Ausgangspunkt für Stadterkundungen und Tagesausflüge rund um den Bodensee. Von hier starten Sie zu Fuß zum Hafen, per Schiff zur Mainau oder über die nahe Grenze in die Schweiz – und kehren abends in Ihr Zimmer zurück.</p>
+        <div class="signature reveal d2"><strong>Herzlich willkommen.</strong><span>Ihre Familie Günther</span></div>
+      </div></div>
+    </div></section>
+    <section class="mosaic" aria-label="Originale Eindrücke der Pension Graf">
+      <figure class="mosaic-main reveal"><img src="img/graf-10.jpg" alt="Impression aus der Pension Graf" loading="lazy"></figure>
+      <div class="mosaic-aside"><p class="mosaic-number reveal">Zentral</p><div>
+        <figure class="mosaic-small reveal d1"><img src="img/graf-14.jpg" alt="Eindruck von der Lage der Pension Graf in Konstanz" loading="lazy"></figure>
+        <div class="mosaic-caption"><span>Familiengeführt</span><span>Im Herzen der Stadt</span></div>
+        <p class="mosaic-quote reveal">„Der ideale Dreh- und Angelpunkt für Konstanz und den Bodensee.“</p>
+      </div></div>
+    </section>
+    <div class="marquee" aria-hidden="true"><div><span>Nichtraucher-Pension <i></i> LAGO gegenüber <i></i> Kostenloses WLAN <i></i> Check-in 14–17 Uhr <i></i> Check-out bis 11 Uhr <i></i> WhatsApp erreichbar <i></i></span><span>Nichtraucher-Pension <i></i> LAGO gegenüber <i></i> Kostenloses WLAN <i></i> Check-in 14–17 Uhr <i></i> Check-out bis 11 Uhr <i></i> WhatsApp erreichbar <i></i></span></div></div>
+    <section class="experiences" id="lage" aria-labelledby="experiences-title">
+      <header class="section-head"><div><p class="section-tag reveal">Konstanz vor der Tür</p><h2 class="reveal" id="experiences-title">Stadt, See,<br>drei Länder.</h2></div><p class="section-head-text reveal d1">Vom Bodanplatz aus liegen Altstadt, Hafen und Grenze in Gehweite. Für Tagesausflüge öffnen sich Bodensee, Mainau, Schaffhausen und Bregenz.</p></header>
+      <div class="experience-grid">
+        <article class="experience reveal"><img src="img/graf-09.jpg" alt="Originalaufnahme der Pension Graf am Bodensee" loading="lazy"><div><span>01 · Wenige Schritte</span><h3>See &amp; Hafen.</h3><p>Schiffsanleger, SEA LIFE und Uferpromenade erreichen Sie bequem zu Fuß.</p></div></article>
+        <article class="experience reveal d1"><img src="img/graf-05.jpg" alt="Originalaufnahme der Hotel Pension Graf" loading="lazy"><div><span>02 · Direkt gegenüber</span><h3>LAGO &amp; Altstadt.</h3><p>Shopping, Kino und Gastronomie beginnen gleich auf der anderen Straßenseite.</p></div></article>
+        <article class="experience reveal d2"><img src="img/graf-14.jpg" alt="Originalaufnahme aus Konstanz von der Pension Graf" loading="lazy"><div><span>03 · Grenzenlos nah</span><h3>Schweiz &amp; Bodensee.</h3><p>Zu Fuß über die Grenze oder per Schiff zur Mainau und zu weiteren Zielen am See.</p></div></article>
+      </div>
+    </section>
+    <section class="rooms" id="zimmer" aria-labelledby="rooms-title">
+      <header class="section-head"><p class="section-tag reveal">Zimmer für 1 bis 6</p><div><h2 class="reveal" id="rooms-title">So einfach<br>wie passend.</h2><p class="section-head-text reveal d1">Vom kompakten Einzelzimmer bis zur klimatisierten Familien-Suite bietet die Pension unterschiedliche Kategorien – teils mit eigenem Bad, teils mit Dusche und WC auf der Etage.</p></div></header>
+      <div class="room-grid">
+        <article class="room-card reveal" data-tilt><img src="img/graf-06.jpg" alt="Zimmerimpression der Pension Graf" loading="lazy"><div class="room-top"><span>Einzelzimmer</span><span>1 Person</span></div><div class="room-bottom"><h3>Kompakt.</h3><div class="room-meta"><span>Etagenbad oder <strong>DU/WC</strong></span><a href="#anfragen">Anfragen →</a></div></div></article>
+        <article class="room-card reveal d1" data-tilt><img src="img/graf-02.jpg" alt="Doppelzimmer-Impression der Pension Graf" loading="lazy"><div class="room-top"><span>Doppelzimmer</span><span>2 Personen</span></div><div class="room-bottom"><h3>Zu zweit.</h3><div class="room-meta"><span>Mehrere <strong>Kategorien</strong></span><a href="#anfragen">Anfragen →</a></div></div></article>
+        <article class="room-card reveal d2" data-tilt><img src="img/graf-12.jpg" alt="Familienzimmer-Impression der Pension Graf" loading="lazy"><div class="room-top"><span>Familienzimmer / Suite</span><span>4–6 Personen</span></div><div class="room-bottom"><h3>Mehr Platz.</h3><div class="room-meta"><span>Klimatisiert · <strong>Bad/WC</strong></span><a href="#anfragen">Anfragen →</a></div></div></article>
+      </div>
+      <div class="room-note reveal"><span>Alle Zimmer sind Nichtraucherzimmer. WLAN und TV stehen zur Verfügung; aktuelle Preise variieren nach Kategorie, Saison und Aufenthaltsdauer.</span><a class="text-link" href="#anfragen">Mein Zimmer anfragen</a></div>
+    </section>
+    <section class="breakfast" id="wissen" aria-labelledby="wissen-title">
+      <div class="breakfast-gallery reveal"><figure class="breakfast-main"><img src="img/graf-03.jpg" alt="Zimmerdetail der Pension Graf" loading="lazy"></figure><figure class="breakfast-side"><img src="img/graf-01.jpg" alt="Originale Zimmerimpression der Pension Graf" loading="lazy"></figure></div>
+      <div class="breakfast-copy"><p class="section-tag reveal">Gut zu wissen</p><h2 class="reveal" id="wissen-title">Einfach ankommen.<br><em>Klar informiert.</em></h2><p class="reveal d1">Die Pension ist bewusst unkompliziert organisiert. Damit Ihre Anreise entspannt bleibt, finden Sie die wichtigsten Hinweise schon vor der Anfrage.</p><ul class="table-facts reveal d2"><li><strong>14–17 Uhr</strong><span>Regulärer Check-in; spätere Anreise bitte abstimmen</span></li><li><strong>Ohne Frühstück</strong><span>Im LAGO und in der Innenstadt finden Sie viele Cafés</span></li><li><strong>Direktbuchung</strong><span>Zahlung vor Ort bei direkter Buchung in bar</span></li><li><strong>Fahrräder</strong><span>Abstellmöglichkeit im nahen Fahrradparkhaus</span></li></ul></div>
+    </section>
+    <section class="voices" aria-label="Gastgebergruß"><div><p class="section-tag reveal">Persönlich erreichbar</p><blockquote class="reveal">„Danke für Ihr Interesse – und kommen Sie uns bald wieder hier am Bodensee besuchen.“</blockquote><cite class="reveal d1">Familie Günther · Pension Graf</cite></div></section>
+    <section class="booking" id="anfragen" aria-labelledby="booking-title"><div class="booking-inner">
+      <header class="booking-head"><h2 class="reveal" id="booking-title">Direkt bei<br>Familie Günther anfragen.</h2><p class="reveal d1">Wählen Sie Zeitraum, Gästezahl und Wunschkategorie. Anschließend geht es zum offiziellen Anfrageformular der Pension.</p></header>
+      <form class="booking-form" id="bookingForm">
+        <div class="booking-fields"><label><span>Anreise</span><input type="date" id="anreise" required></label><label><span>Abreise</span><input type="date" id="abreise" required></label><label><span>Gäste</span><input type="number" id="personen" min="1" max="6" value="2" required></label><label><span>Zimmerwunsch</span><select id="kategorie"><option>Einzelzimmer</option><option selected>Doppelzimmer</option><option>Dreibettzimmer</option><option>Familienzimmer / Suite</option></select></label></div>
+        <aside class="booking-aside"><ul><li>Direkter Kontakt zur Pension</li><li>Antwort auf Ihre persönliche Anfrage</li><li>Abstimmung einer späteren Anreise möglich</li><li>Telefonisch und per WhatsApp erreichbar</li></ul><div><a class="submit-button" id="direkt-buchen" href="https://www.hotel-pension-graf.de/anfrage-room-inquiry" target="_blank" rel="noopener">Offizielle Zimmeranfrage</a><p class="form-note">Diese geschützte Konzeptseite speichert und überträgt keine persönlichen Daten.</p></div></aside>
+      </form>
+    </div></section>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-top"><div class="footer-brand">Pension<br>Graf<small>Mitten im Konstanzer Leben.</small></div><div><h3>Hier finden Sie uns</h3><p>Wiesenstraße 2</p><p>78462 Konstanz</p><p>Gegenüber dem LAGO</p></div><div><h3>Direkt erreichbar</h3><a href="tel:+4975311286890">+49 (0) 7531 128 689-0</a><a href="https://wa.me/4917621478969" target="_blank" rel="noopener">WhatsApp: +49 176 21478969</a><a href="mailto:info@hotel-pension-graf.de">info@hotel-pension-graf.de</a></div></div>
+    <div class="footer-bottom"><span>© 2026 Hotel Pension Graf · Konzeptwebsite von Hotelfreunde</span><span><a href="https://www.hotel-pension-graf.de/impressum-und-datenschutz" target="_blank" rel="noopener">Impressum &amp; Datenschutz</a></span></div>
+  </footer>
+  <button class="demo-trigger" type="button" id="demoBtn">Direktanfrage öffnen<small>Zimmerwunsch senden</small></button>
+  <script src="widget.js?v=1" defer></script><script src="pensiongraf.js?v=1"></script>
+</body>
+</html>
