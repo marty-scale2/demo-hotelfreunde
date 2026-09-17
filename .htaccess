@@ -1,0 +1,17 @@
+# ============================================================
+# Apache-Konfiguration fuer All-Inkl (KAS-Hosting).
+# Ersetzt zwei Dinge, die GitHub Pages automatisch erledigt hat.
+# Auf GitHub Pages selbst hat diese Datei keine Wirkung, sie wird
+# dort schlicht ignoriert, kann also gefahrlos mit hochgeladen
+# werden, egal ob schon umgezogen wurde oder nicht.
+# ============================================================
+
+# Eigene 404-Seite statt der Standard-Fehlerseite des Servers.
+ErrorDocument 404 /404.html
+
+# HTTP auf HTTPS umleiten, sobald Let's Encrypt in KAS aktiv ist.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
