@@ -29,7 +29,7 @@
     excludedPaths: ['/buchen', '/booking', '/reservier', '/danke', '/thank', '/warenkorb'],
 
     enableEmailCapture: false, // Version 1: aus lassen
-    privacyUrl: 'datenschutz.html',
+    privacyUrl: 'datenschutz/',
 
     WEBHOOK_URL: ''           // optional, leer = keine Messung
   };
