@@ -23,4 +23,22 @@
   document.querySelectorAll("input[type=date]").forEach(function(i){i.min=iso(today);if(!i.value)i.value=iso(i.name==="departure"?tomorrow:today)});
   document.querySelectorAll(".booking-rail").forEach(function(form){form.addEventListener("submit",function(e){e.preventDefault();window.open(BOOKING,"_blank","noopener")})});
   var reduced=window.matchMedia("(prefers-reduced-motion: reduce)").matches,els=document.querySelectorAll(".reveal");if(reduced||!("IntersectionObserver" in window)){els.forEach(function(e){e.classList.add("in")})}else{var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.08});els.forEach(function(e){io.observe(e)})}
+  function directBookingOffer(){
+    if(page==="legal"||/\/(karriere|gruppen)\//.test(location.pathname))return;
+    var seenKey="volapuek-direktbuchung-angebot";
+    try{if(sessionStorage.getItem(seenKey)==="1")return}catch(e){}
+    var started=Date.now(),opened=false,offer=document.createElement("div");
+    offer.className="direct-offer";offer.hidden=true;offer.setAttribute("role","dialog");offer.setAttribute("aria-modal","true");offer.setAttribute("aria-labelledby","directOfferTitle");
+    offer.innerHTML='<div class="direct-offer__card"><div class="direct-offer__accent"></div><button class="direct-offer__close" type="button" aria-label="Angebot schließen">×</button><div class="direct-offer__content"><p class="eyebrow">Ein Gruß vom Bodensee</p><h2 id="directOfferTitle">Noch einen Moment&nbsp;…</h2><p>Buchen Sie Ihren Aufenthalt direkt bei uns und starten Sie besonders entspannt in Ihre Zeit in Konstanz.</p><div class="direct-offer__benefit"><span aria-hidden="true">◇</span> Ihr Willkommensdrink bei Direktbuchung</div><a class="button button--dark" href="'+BOOKING+'" target="_blank" rel="noopener">Verfügbarkeit prüfen & direkt buchen</a><small>Das Angebot gilt bei Buchung über die offizielle Direktbuchungsstrecke.</small></div></div>';
+    document.body.appendChild(offer);
+    var close=offer.querySelector(".direct-offer__close"),link=offer.querySelector("a"),previousFocus=null;
+    function allowed(){try{return localStorage.getItem("volapuek-demo-freigabe")==="1"}catch(e){return true}}
+    function show(){if(opened||!allowed())return;opened=true;try{sessionStorage.setItem(seenKey,"1")}catch(e){}previousFocus=document.activeElement;offer.hidden=false;document.body.classList.add("direct-offer-open");setTimeout(function(){close.focus()},30)}
+    function hide(){offer.hidden=true;document.body.classList.remove("direct-offer-open");if(previousFocus&&previousFocus.focus)previousFocus.focus()}
+    close.addEventListener("click",hide);offer.addEventListener("click",function(e){if(e.target===offer)hide()});link.addEventListener("click",hide);
+    document.addEventListener("keydown",function(e){if(offer.hidden)return;if(e.key==="Escape")hide();if(e.key==="Tab"){var focusable=[close,link],index=focusable.indexOf(document.activeElement),next=e.shiftKey?(index<=0?1:index-1):(index>=1?0:index+1);e.preventDefault();focusable[next].focus()}});
+    document.addEventListener("mouseout",function(e){if(e.clientY<=0&&!e.relatedTarget&&Date.now()-started>6000)show()});
+    if(window.matchMedia("(pointer: coarse)").matches)setTimeout(function(){if(window.scrollY>document.documentElement.scrollHeight*.18)show()},35000);
+  }
+  directBookingOffer();
 })();
